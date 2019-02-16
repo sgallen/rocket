@@ -1,0 +1,20 @@
+#!/bin/bash
+# Helper script to launch visual studio code inside a container
+
+if [ ! -d /rocket ]; then
+    echo "This script should be run from within a container.  For example:"
+    echo "    docker-compose run --rm --service-ports web bash"
+    echo "  or"
+    echo "    docker-compose exec web bash"
+    echo "  then"
+    echo "    container_shell> vscode"
+    exit 1
+fi
+
+# Visual studio uses a socket file (.sock) in the config directory to allow
+# different instances of vscode to talk to each other, this doesn't work across the
+# docker boundary so want to remove the socket file first.
+rm -f ~/.config/Code/*.sock
+
+# Run code, if required user can provide extra arguments to code via EXTRA_VSCODE_ARGS
+code --new-window $EXTRA_VSCODE_ARGS /rocket/extension

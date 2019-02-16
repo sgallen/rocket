@@ -1,0 +1,32 @@
+{
+    // Set the font because the container doesn't have as many fonts installed.
+    "editor.fontFamily": "'Noto Mono', 'Courier New', monospace",
+    "terminal.integrated.cwd": "/rocket/extension",
+    "terminal.integrated.shell.linux": "/bin/bash",
+
+    "files.autoSave": "afterDelay",
+    "editor.tabSize": 2,
+    "editor.rulers": [
+        80,
+        120
+    ],
+    "editor.insertSpaces": true,
+    "explorer.openEditors.visible": 20,
+    "html.format.wrapAttributes": "force-expand-multiline",
+    "typescript.tsdk": "./node_modules/typescript/lib",
+    "html.format.contentUnformatted": "",
+    "html.format.unformatted": null,
+    "typescript.check.tscVersion": false,
+
+    // If the editor.formatOnSave is set it screws up the tslint one.
+    "editor.formatOnSave": false,
+    "tslint.autoFixOnSave": true,
+    "tslint.nodePath": "./node_modules",
+
+    "typescript.extension.sortImports.sortMethod": "path",
+    "typescript.extension.sortImports.pathSortOrder": [
+        "package",
+        "relativeUpLevel",
+        "relativeDownLevel"
+    ]
+}

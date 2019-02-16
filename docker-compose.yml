@@ -1,0 +1,19 @@
+version: '3'
+services:
+  rocket:
+    build:
+      context: ./extension
+      dockerfile: Dockerfile
+      args:
+        - VSCODE
+        - VSCODE_VIM
+    volumes:
+      - .:/rocket
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "200k"
+        max-file: "10"
+    command: yarn start
+    ports:
+      - "4201:4200"

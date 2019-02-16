@@ -1,0 +1,16 @@
+version: '3'
+services:
+  rocket:
+    build:
+      args:
+        - VSCODE=1
+        - VSCODE_VIM=1
+    environment:
+      - DISPLAY
+      - DEBIAN_FRONTEND="noninteractive"
+    volumes:
+      - /tmp/.X11-unix:/tmp/.X11-unix
+      - $HOME/.Xauthority:/home/node/.Xauthority
+      - $HOME/.ssh:/home/node/.ssh
+      - $HOME/.gitconfig:/home/node/.gitconfig
+      - $HOME/.config:/home/node/.config

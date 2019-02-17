@@ -1,0 +1,19 @@
+{
+  "name": "Rocket",
+  "version": "1.0",
+  "manifest_version": 2,
+  "description": "First google chrome extension using Angular",
+  "icons": {
+    "128": "assets/icons/icon128.png",
+    "48": "assets/icons/icon48.png"
+  },
+  "permissions": [
+    "https://github.com/*",
+    "storage"
+  ],
+  "browser_action": {
+    "default_title": "Open Popup!",
+    "default_popup": "index.html"
+  },
+  "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'"
+}

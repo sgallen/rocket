@@ -15,5 +15,11 @@
     "default_title": "Open Popup!",
     "default_popup": "index.html"
   },
+  "content_scripts": [
+    {
+      "matches": ["https://github.com/*"],
+      "js": ["content-script.js"]
+    }
+  ],
   "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'"
 }

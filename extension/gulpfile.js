@@ -27,7 +27,11 @@ gulp.task('content-script', function() {
     .plugin(tsify, { target: 'es6' })
     .transform(
       'babelify',
-      { presets: ['@babel/preset-env'], extensions: ['.ts', '.js'] }
+      {
+        presets: ['@babel/preset-env'],
+        extensions: ['.ts', '.js'],
+        plugins: ['@babel/plugin-transform-runtime']
+      }
     )
     .bundle()
     .pipe(source('content-script.js'))
@@ -47,7 +51,12 @@ gulp.task('background', function() {
     .plugin(tsify, { target: 'es6' })
     .transform(
       'babelify',
-      { presets: ['@babel/preset-env'], extensions: ['.ts', '.js'] })
+      {
+        presets: ['@babel/preset-env'],
+        extensions: ['.ts', '.js'],
+        plugins: ['@babel/plugin-transform-runtime']
+      }
+    )
     .bundle()
     .pipe(source('background.js'))
     .pipe(buffer())
